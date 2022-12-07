@@ -3,7 +3,7 @@ def roman_to_int(roman_string):
     """convert roman numeral to an integer"""
     if type(roman_string) != str or roman_string is None:
         return (0)
-    roman_dictionary = {
+    rom_dic = {
             "I": 1,
             "V": 5,
             "X": 10,
@@ -15,13 +15,13 @@ def roman_to_int(roman_string):
     count = 0
 
     for i in range(len(roman_string)):
-        if roman_dictionary.get(roman_string[i], 0) == 0:
+        if rom_dic.get(roman_string[i], 0) == 0:
             return (0)
 
         if (i != (len(roman_string) - 1) and
-                roman_dictionary[roman_string[i]] < roman_dictionary[roman_string[i + 1]]):
-                count += roman_dictionary[roman_string[i]] * -1
+                rom_dic[roman_string[i]] < rom_dic[roman_string[i + 1]]):
+                count += rom_dic[roman_string[i]] * -1
 
         else:
-            count += roman_dictionary[roman_string[i]]
+            count += rom_dic[roman_string[i]]
     return (count)
