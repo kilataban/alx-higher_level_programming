@@ -5,3 +5,4 @@
 class Square(object):
     """Simple empty implementation."""
     pass
+
